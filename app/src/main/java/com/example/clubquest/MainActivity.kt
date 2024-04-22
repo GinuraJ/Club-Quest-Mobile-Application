@@ -98,6 +98,8 @@ fun MainPageContent(name: String, context: Context, modifier: Modifier = Modifie
             leagueDao.insertUser(League20)
             leagueDao.insertUser(League21)
             leagueDao.insertUser(League22)
+            leagueDao.insertUser(League22)
+
 
         }
     }
@@ -211,52 +213,7 @@ fun MainPageContent(name: String, context: Context, modifier: Modifier = Modifie
             }
         }
     }
-
-
-
 }
-
-//suspend fun saveLeagues(){
-//    val League1 = League("4328","English Premier League","Soccer","Premier League, EPL")
-//    leagueDao.insertUser(League1)
-//
-//    val League2 = League("4329","English League Championship","Soccer","Championship")
-//    leagueDao.insertUser(League2)
-//
-//    val League3 = League("4330","Scottish Premier League","Soccer","Scottish Premiership, SPFL")
-//    leagueDao.insertUser(League3)
-//
-//    val League4 = League("4331","German Bundesliga","Soccer","Bundesliga, FuÃŸball-Bundesliga")
-//    leagueDao.insertUser(League4)
-//
-//    val League5 = League("4332","Italian Serie A","Soccer","Serie A")
-//    leagueDao.insertUser(League5)
-//
-//    val League6 = League("4334","French Ligue 1","Soccer","Ligue 1 Conforama")
-//    val League7 = League("4335","Spanish La Liga","Soccer","LaLiga Santander, La Liga")
-//    val League8 = League("4336","Greek Superleague Greece","Soccer","")
-//    val League9 = League("4337","Dutch Eredivisie","Soccer","Eredivisie")
-//    val League10 = League("4338","Belgian First Division A","Soccer","Jupiler Pro League")
-//
-//    val League11 = League("4339","Turkish Super Lig","Soccer","Super Lig")
-//    val League12 = League("4340","Danish Superliga","Soccer","")
-//    val League13 = League("4344","Portuguese Primeira Liga","Soccer","Liga NOS")
-//    val League14 = League("4346","American Major League Soccer","Soccer","MLS, Major League Soccer")
-//    val League15 = League("4347","Swedish Allsvenskan","Soccer","Fotbollsallsvenskan")
-//    val League16 = League("4350","Mexican Primera League","Soccer","Liga MX")
-//    val League17 = League("4351","Brazilian Serie A","Soccer","")
-//
-//    val League18 = League( "4354","Ukrainian Premier League","Soccer","")
-//    val League19 = League("4355","Russian Football Premier League","Soccer","Ð§ÐµÐ¼Ð¿Ð¸Ð¾Ð½Ð°Ñ‚ Ð Ð¾ÑÑÐ¸Ð¸ Ð¿Ð¾ Ñ„ÑƒÑ‚Ð±Ð¾Ð»Ñƒ")
-//    val League20 = League("4356","Australian A-League","Soccer","A-League")
-//    val League21 = League("4358","Norwegian Eliteserien","Soccer","Eliteserien")
-//    val League22 = League("4359","Chinese Super League","Soccer","")
-//
-//
-//
-//
-//}
-
 
 class MainActivity : ComponentActivity() {
 

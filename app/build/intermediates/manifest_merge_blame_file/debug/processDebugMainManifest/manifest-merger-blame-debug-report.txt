@@ -20,87 +20,87 @@
 15-->[androidx.core:core:1.10.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/a00e95fea675a5ee2ac5027ed7064827/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:5:5-46:19
+17-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:5:5-46:19
 18        android:allowBackup="true"
-18-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:6:9-35
+18-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 19-->[androidx.core:core:1.10.1] /Users/ginurapremawardana/.gradle/caches/transforms-3/a00e95fea675a5ee2ac5027ed7064827/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
 20        android:dataExtractionRules="@xml/data_extraction_rules"
-20-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:7:9-65
+20-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:7:9-65
 21        android:debuggable="true"
 22        android:extractNativeLibs="false"
 23        android:fullBackupContent="@xml/backup_rules"
-23-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:8:9-54
+23-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:8:9-54
 24        android:icon="@mipmap/ic_launcher"
-24-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:9:9-43
+24-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:9:9-43
 25        android:label="@string/app_name"
-25-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:10:9-41
+25-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:10:9-41
 26        android:roundIcon="@mipmap/ic_launcher_round"
-26-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:11:9-54
+26-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:11:9-54
 27        android:supportsRtl="true"
-27-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:12:9-35
+27-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:12:9-35
 28        android:testOnly="true"
 29        android:theme="@style/Theme.ClubQuest" >
-29-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:13:9-47
+29-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:13:9-47
 30        <activity
-30-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:15:9-19:54
+30-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:15:9-19:54
 31            android:name="com.example.clubquest.Search"
-31-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:16:13-35
+31-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:16:13-35
 32            android:exported="false"
-32-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:17:13-37
+32-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:17:13-37
 33            android:label="@string/title_activity_search"
-33-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:18:13-58
+33-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:18:13-58
 34            android:theme="@style/Theme.ClubQuest" />
-34-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:19:13-51
+34-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:19:13-51
 35        <activity
-35-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:15:9-19:54
+35-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:15:9-19:54
 36            android:name="com.example.clubquest.Search"
-36-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:16:13-35
+36-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:16:13-35
 37            android:exported="false"
-37-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:17:13-37
+37-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:17:13-37
 38            android:label="@string/title_activity_search"
-38-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:18:13-58
+38-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:18:13-58
 39            android:theme="@style/Theme.ClubQuest" />
-39-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:19:13-51
+39-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:19:13-51
 40        <activity
-40-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:25:9-29:54
+40-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:25:9-29:54
 41            android:name="com.example.clubquest.SearchClubs"
-41-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:26:13-40
+41-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:26:13-40
 42            android:exported="false"
-42-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:27:13-37
+42-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:27:13-37
 43            android:label="@string/title_activity_search_clubs"
-43-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:28:13-64
+43-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:28:13-64
 44            android:theme="@style/Theme.ClubQuest" />
-44-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:29:13-51
+44-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:29:13-51
 45        <activity
-45-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:30:9-34:54
+45-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:30:9-34:54
 46            android:name="com.example.clubquest.AddLeaguesToDB"
-46-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:31:13-43
+46-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:31:13-43
 47            android:exported="false"
-47-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:32:13-37
+47-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:32:13-37
 48            android:label="@string/title_activity_add_leagues_to_db"
-48-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:33:13-69
+48-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:33:13-69
 49            android:theme="@style/Theme.ClubQuest" />
-49-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:34:13-51
+49-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:34:13-51
 50        <activity
-50-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:35:9-45:20
+50-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:35:9-45:20
 51            android:name="com.example.clubquest.MainActivity"
-51-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:36:13-41
+51-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:36:13-41
 52            android:exported="true"
-52-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:37:13-36
+52-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:37:13-36
 53            android:label="@string/app_name"
-53-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:38:13-45
+53-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:38:13-45
 54            android:theme="@style/Theme.ClubQuest" >
-54-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:39:13-51
+54-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:39:13-51
 55            <intent-filter>
-55-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:40:13-44:29
+55-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:40:13-44:29
 56                <action android:name="android.intent.action.MAIN" />
-56-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:41:17-69
-56-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:41:25-66
+56-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:41:17-69
+56-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:41:25-66
 57
 58                <category android:name="android.intent.category.LAUNCHER" />
-58-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:43:17-77
-58-->/Users/ginurapremawardana/Desktop/Club_Quest_Android_Application-main/app/src/main/AndroidManifest.xml:43:27-74
+58-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:43:17-77
+58-->/Users/ginurapremawardana/Desktop/CW2 MAD/Untitled/app/src/main/AndroidManifest.xml:43:27-74
 59            </intent-filter>
 60        </activity>
 61        <activity
