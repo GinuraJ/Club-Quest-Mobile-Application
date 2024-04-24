@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" >
 
+    <!-- Add network permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,11 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClubQuest"
         tools:targetApi="31" >
-        <activity
-            android:name=".Search"
-            android:exported="false"
-            android:label="@string/title_activity_search"
-            android:theme="@style/Theme.ClubQuest" />
         <activity
             android:name=".Search"
             android:exported="false"
@@ -44,5 +43,5 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
+
