@@ -47,6 +47,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.room.Room
+import coil.compose.rememberImagePainter
 import com.example.clubquest.ui.theme.ui.theme.ClubQuestTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -74,7 +75,7 @@ class Search : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     fun SearchClubContent() {
 
-        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "leagues").build()
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "leaguess").build()
         val leagueDao = db.leagueDoa()
         var searchKeyword by remember { mutableStateOf("") }
         var searchResults by remember { mutableStateOf<List<League>>(emptyList()) }
@@ -187,22 +188,24 @@ class Search : ComponentActivity() {
                         LazyColumn(
                             modifier = Modifier
 //                                .background(Color(146, 203, 255))
-                                .background(Color(31,56,83))
+                                .background(Color(31, 56, 83))
                                 .fillMaxHeight()
                                 .weight(2f)
                         ) {
                             items(searchResults) { league ->
-                                Box(
+                                Column(
                                     modifier = Modifier
                                         .padding(start = 10.dp, end = 10.dp, top = 10.dp)
                                         .background(Color.White)
 
                                 ) {
+
                                     Text(
                                         text = "League ID: ${league.leagueId}\n" +
                                                 "Name: ${league.strLeague}\n" +
                                                 "Sport: ${league.strSport}\n" +
-                                                "Alternate Name: ${league.strLeagueAlternate}",
+                                                "Alternate Name: ${league.strLeagueAlternate}\n" +
+                                                "Logo: ${league.strLogo}",
                                         modifier = Modifier
                                             .padding(10.dp)
                                             .fillMaxWidth()
@@ -221,6 +224,7 @@ class Search : ComponentActivity() {
 
 
     }
+
 
     fun searchLeagues(leagueDao: LeagueDoa, keyword: String): List<League> {
         return runBlocking {

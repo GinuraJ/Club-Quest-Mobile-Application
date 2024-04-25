@@ -323,6 +323,8 @@ class SearchClubs : ComponentActivity() {
             val strSport = league.getString("strSport")
             val strLeague = league.getString("strLeague")
             val strLeagueAlternate = league.optString("strLeagueAlternate", "")
+            val strLogo = league.getString("strLogo")
+
 
             allLeagues.append("${i + 1}---------------------\n idLeague: $idLeague \n strSport: $strSport\n strLeague: $strLeague \n")
             if (strLeagueAlternate.isNotEmpty()) {
@@ -331,7 +333,7 @@ class SearchClubs : ComponentActivity() {
             allLeagues.append("\n\n")
 
 
-            var l = League(leagueId = idLeague, strLeague = strLeague, strSport = strSport, strLeagueAlternate = strLeagueAlternate)
+            var l = League(leagueId = idLeague, strLeague = strLeague, strSport = strSport, strLeagueAlternate = strLeagueAlternate, strLogo = strLogo)
             leagueList.add(l)
         }
         return allLeagues.toString()
@@ -339,7 +341,7 @@ class SearchClubs : ComponentActivity() {
 
     suspend fun retrieveWebData(){
 
-        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "leagues").build()
+        val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "leaguess").build()
 
         val leagueDao = db.leagueDoa()
 

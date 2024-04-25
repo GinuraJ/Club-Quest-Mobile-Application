@@ -45,7 +45,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR REPLACE INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR REPLACE INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -71,6 +71,11 @@ public final class LeagueDoa_Impl implements LeagueDoa {
           statement.bindNull(5);
         } else {
           statement.bindString(5, entity.getStrLeagueAlternate());
+        }
+        if (entity.getStrLogo() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getStrLogo());
         }
       }
     };
@@ -78,7 +83,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`) VALUES (nullif(?, 0),?,?,?,?)";
+        return "INSERT OR ABORT INTO `League` (`Id`,`leagueId`,`strLeague`,`strSport`,`strLeagueAlternate`,`strLogo`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -104,6 +109,11 @@ public final class LeagueDoa_Impl implements LeagueDoa {
           statement.bindNull(5);
         } else {
           statement.bindString(5, entity.getStrLeagueAlternate());
+        }
+        if (entity.getStrLogo() == null) {
+          statement.bindNull(6);
+        } else {
+          statement.bindString(6, entity.getStrLogo());
         }
       }
     };
@@ -223,6 +233,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
           final int _cursorIndexOfStrLeague = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeague");
           final int _cursorIndexOfStrSport = CursorUtil.getColumnIndexOrThrow(_cursor, "strSport");
           final int _cursorIndexOfStrLeagueAlternate = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeagueAlternate");
+          final int _cursorIndexOfStrLogo = CursorUtil.getColumnIndexOrThrow(_cursor, "strLogo");
           final List<League> _result = new ArrayList<League>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final League _item;
@@ -252,7 +263,13 @@ public final class LeagueDoa_Impl implements LeagueDoa {
             } else {
               _tmpStrLeagueAlternate = _cursor.getString(_cursorIndexOfStrLeagueAlternate);
             }
-            _item = new League(_tmpId,_tmpLeagueId,_tmpStrLeague,_tmpStrSport,_tmpStrLeagueAlternate);
+            final String _tmpStrLogo;
+            if (_cursor.isNull(_cursorIndexOfStrLogo)) {
+              _tmpStrLogo = null;
+            } else {
+              _tmpStrLogo = _cursor.getString(_cursorIndexOfStrLogo);
+            }
+            _item = new League(_tmpId,_tmpLeagueId,_tmpStrLeague,_tmpStrSport,_tmpStrLeagueAlternate,_tmpStrLogo);
             _result.add(_item);
           }
           return _result;
@@ -287,6 +304,7 @@ public final class LeagueDoa_Impl implements LeagueDoa {
           final int _cursorIndexOfStrLeague = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeague");
           final int _cursorIndexOfStrSport = CursorUtil.getColumnIndexOrThrow(_cursor, "strSport");
           final int _cursorIndexOfStrLeagueAlternate = CursorUtil.getColumnIndexOrThrow(_cursor, "strLeagueAlternate");
+          final int _cursorIndexOfStrLogo = CursorUtil.getColumnIndexOrThrow(_cursor, "strLogo");
           final List<League> _result = new ArrayList<League>(_cursor.getCount());
           while (_cursor.moveToNext()) {
             final League _item;
@@ -316,7 +334,13 @@ public final class LeagueDoa_Impl implements LeagueDoa {
             } else {
               _tmpStrLeagueAlternate = _cursor.getString(_cursorIndexOfStrLeagueAlternate);
             }
-            _item = new League(_tmpId,_tmpLeagueId,_tmpStrLeague,_tmpStrSport,_tmpStrLeagueAlternate);
+            final String _tmpStrLogo;
+            if (_cursor.isNull(_cursorIndexOfStrLogo)) {
+              _tmpStrLogo = null;
+            } else {
+              _tmpStrLogo = _cursor.getString(_cursorIndexOfStrLogo);
+            }
+            _item = new League(_tmpId,_tmpLeagueId,_tmpStrLeague,_tmpStrSport,_tmpStrLeagueAlternate,_tmpStrLogo);
             _result.add(_item);
           }
           return _result;

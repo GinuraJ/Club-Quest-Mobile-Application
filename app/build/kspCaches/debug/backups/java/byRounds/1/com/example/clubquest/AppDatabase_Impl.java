@@ -34,9 +34,9 @@ public final class AppDatabase_Impl extends AppDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `League` (`Id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `leagueId` TEXT, `strLeague` TEXT, `strSport` TEXT, `strLeagueAlternate` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `League` (`Id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `leagueId` TEXT, `strLeague` TEXT, `strSport` TEXT, `strLeagueAlternate` TEXT, `strLogo` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '48afb59e53f7ac53c887d84ba9d5d268')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '84a1e4e43f881f5c9e97cd6792ae78ad')");
       }
 
       @Override
@@ -85,12 +85,13 @@ public final class AppDatabase_Impl extends AppDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsLeague = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsLeague = new HashMap<String, TableInfo.Column>(6);
         _columnsLeague.put("Id", new TableInfo.Column("Id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsLeague.put("leagueId", new TableInfo.Column("leagueId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsLeague.put("strLeague", new TableInfo.Column("strLeague", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsLeague.put("strSport", new TableInfo.Column("strSport", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsLeague.put("strLeagueAlternate", new TableInfo.Column("strLeagueAlternate", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsLeague.put("strLogo", new TableInfo.Column("strLogo", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysLeague = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesLeague = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoLeague = new TableInfo("League", _columnsLeague, _foreignKeysLeague, _indicesLeague);
@@ -102,7 +103,7 @@ public final class AppDatabase_Impl extends AppDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "48afb59e53f7ac53c887d84ba9d5d268", "b57d59284d07891e90332e4222976401");
+    }, "84a1e4e43f881f5c9e97cd6792ae78ad", "7e10cf6a852bd6c13ec8bfd24e908165");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

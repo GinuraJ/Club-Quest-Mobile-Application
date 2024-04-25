@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.clubquest.app-mergeDebugResources-46:/values-v16/values-v16.xml",
+            "outputFile": "com.example.clubquest.app-mergeDebugResources-48:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/ginurapremawardana/.gradle/caches/transforms-3/a00e95fea675a5ee2ac5027ed7064827/transformed/core-1.10.1/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\Thinura\\.gradle\\caches\\transforms-3\\a00e95fea675a5ee2ac5027ed7064827\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

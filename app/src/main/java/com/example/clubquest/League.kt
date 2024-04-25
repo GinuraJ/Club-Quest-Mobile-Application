@@ -9,5 +9,7 @@ data class League(
     val leagueId: String?,
     val strLeague: String?,
     val strSport: String?,
-    val strLeagueAlternate:String?
+    val strLeagueAlternate:String?,
+    val strLogo:String?
+
 )
