@@ -25,4 +25,10 @@ interface LeagueDoa {
     @Query("delete from league")
     suspend fun deleteAll()
 
+//    @Query("SELECT * FROM League WHERE strLeague LIKE :queryString OR strSport LIKE :queryString OR strLeagueAlternate LIKE :queryString")
+//    suspend fun search(queryString: String): List<League>
+
+    @Query("SELECT * FROM League WHERE LOWER(strLeague) LIKE :queryString OR LOWER(strSport) LIKE :queryString OR LOWER(strLeagueAlternate) LIKE :queryString")
+    suspend fun search(queryString: String): List<League>
+
 }

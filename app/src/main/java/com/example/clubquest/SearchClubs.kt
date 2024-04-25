@@ -18,6 +18,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,6 +28,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -93,6 +95,12 @@ class SearchClubs : ComponentActivity() {
         // Creates a CoroutineScope bound to the GUI composable lifecycle
         val scope = rememberCoroutineScope()
 
+        var showDialog by remember { mutableStateOf(false) }
+
+        // Function to show the dialog
+        fun showAlertDialog() {
+            showDialog = true
+        }
 
         Column{
             TopAppBar(
@@ -209,7 +217,8 @@ class SearchClubs : ComponentActivity() {
                         Button(
                             onClick = {
                                 scope.launch {
-                                    lll()
+                                    retrieveWebData()
+                                    showAlertDialog()
                                 }
                             },
                             shape = RoundedCornerShape(20),
@@ -228,13 +237,30 @@ class SearchClubs : ComponentActivity() {
                                     .padding(10.dp)
                             )
                         }
+
+
+                        if (showDialog) {
+                            AlertDialog(
+                                onDismissRequest = { showDialog = false },
+                                title = { Text("Database Updated") },
+                                text = { Text("Clubs saved successfully!") },
+                                confirmButton = {
+                                    TextButton(
+                                        onClick = { showDialog = false },
+                                        colors = ButtonDefaults.textButtonColors(contentColor = Color.Red)
+                                    ) {
+                                        Text("Close")
+                                    }
+                                }
+                            )
+                        }
                     }
 
                     Column(
                         modifier = Modifier
 //                            .background(Color.Blue)
                             .fillMaxWidth()
-                            .weight(2f)
+                            .weight(1.5f)
                     ) {
                         Text(
                             modifier = Modifier
@@ -244,7 +270,6 @@ class SearchClubs : ComponentActivity() {
                             text = "${bookInfoDisplay}"
                         )
                     }
-
                 }
             }
         }
@@ -312,7 +337,7 @@ class SearchClubs : ComponentActivity() {
         return allLeagues.toString()
     }
 
-    suspend fun lll(){
+    suspend fun retrieveWebData(){
 
         val db = Room.databaseBuilder(applicationContext ,AppDatabase::class.java, "leagues").build()
 
@@ -324,6 +349,7 @@ class SearchClubs : ComponentActivity() {
             }
         }
 
+        leagueList.clear()
         Log.i("","Ginura 2 ${leagueList.size}")
     }
 

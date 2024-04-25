@@ -8,12 +8,18 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -25,6 +31,12 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -34,7 +46,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.room.Room
 import com.example.clubquest.ui.theme.ui.theme.ClubQuestTheme
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class Search : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,12 +73,18 @@ class Search : ComponentActivity() {
     @Composable
     @OptIn(ExperimentalMaterial3Api::class)
     fun SearchClubContent() {
+
+        val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "leagues").build()
+        val leagueDao = db.leagueDoa()
+        var searchKeyword by remember { mutableStateOf("") }
+        var searchResults by remember { mutableStateOf<List<League>>(emptyList()) }
+
         Column{
             TopAppBar(
                 title = {
                     Text(
                         text = "Search Club",
-                        textAlign = TextAlign.Right,
+                        textAlign = TextAlign.Center,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(end = 20.dp)
@@ -80,6 +103,21 @@ class Search : ComponentActivity() {
                         )
                     }
                 },
+                actions = {
+                    IconButton(
+                        onClick = {
+                            GlobalScope.launch(Dispatchers.IO){
+                                leagueDao.deleteAll()
+                            }
+                        },
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Delete,
+                            contentDescription = null
+                        )
+                    }
+                },
+
             )
 
             Box(
@@ -117,8 +155,8 @@ class Search : ComponentActivity() {
                                 .padding(4.dp)
 //                            .background(Color.Blue)
                                 .fillMaxWidth(),
-                            value = "", // Provide a non-null initial value here
-                            onValueChange = { /* Handle value change */ },
+                            value = searchKeyword, // Provide a non-null initial value here
+                            onValueChange = { searchKeyword = it },
                             enabled = true,
                             label = {
                                 Text(
@@ -128,7 +166,7 @@ class Search : ComponentActivity() {
                         )
 
                         Button(
-                            onClick = { /*TODO*/ },
+                            onClick = { searchResults = searchLeagues(leagueDao, searchKeyword.lowercase()) },
                             shape = RoundedCornerShape(20),
                             modifier = Modifier
                                 .padding(top = 10.dp, bottom = 10.dp)
@@ -146,33 +184,52 @@ class Search : ComponentActivity() {
                                     .padding(10.dp)
                             )
                         }
+                        LazyColumn(
+                            modifier = Modifier
+//                                .background(Color(146, 203, 255))
+                                .background(Color(31,56,83))
+                                .fillMaxHeight()
+                                .weight(2f)
+                        ) {
+                            items(searchResults) { league ->
+                                Box(
+                                    modifier = Modifier
+                                        .padding(start = 10.dp, end = 10.dp, top = 10.dp)
+                                        .background(Color.White)
+
+                                ) {
+                                    Text(
+                                        text = "League ID: ${league.leagueId}\n" +
+                                                "Name: ${league.strLeague}\n" +
+                                                "Sport: ${league.strSport}\n" +
+                                                "Alternate Name: ${league.strLeagueAlternate}",
+                                        modifier = Modifier
+                                            .padding(10.dp)
+                                            .fillMaxWidth()
+//                                            .background(Color.White)
+
+                                    )
+                                }
+                            }
+                        }
                     }
-                    Column(
-                        modifier = Modifier
-//                            .background(Color.Blue)
-                            .fillMaxWidth()
-                            .weight(2f)
-                    ) {
-//                        Text(text = "hello")
-                    }
+
                 }
             }
         }
+
+
+
     }
+
+    fun searchLeagues(leagueDao: LeagueDoa, keyword: String): List<League> {
+        return runBlocking {
+            leagueDao.search("%$keyword%")
+        }
+    }
+
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ClubQuestTheme {
-        Greeting("Android")
-    }
-}
+
+

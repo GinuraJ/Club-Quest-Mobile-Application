@@ -182,7 +182,7 @@ class MainActivity : ComponentActivity() {
                         Button(
                             onClick = {
                                 val goToSearchClubs = Intent(this@MainActivity, SearchClubs::class.java)
-                                goToSearchClubs.putExtra("DATABASE_NAME", "leagues")
+//                                goToSearchClubs.putExtra("DATABASE_NAME", "leagues")
 
                                 startActivity(goToSearchClubs)
                             },
